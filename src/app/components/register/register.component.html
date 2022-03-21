@@ -19,7 +19,7 @@
                                         <label for="text" class="form-label">Nombre</label>
                                         <input formControlName="name" type="text" class="form-control" name="text">
                                         <div *ngIf="myForm.get('name').errors && myForm.get('name').dirty || myForm.get('name').touched">
-                                            <p *ngIf="myForm.get('name').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('name').hasError('required')">
                                                 El nombre es obligatorio
                                             </p>
                                         </div>
@@ -27,7 +27,7 @@
                                         <label for="date" class="form-label">Fecha de Nacimiento</label>
                                         <input formControlName="birthday" type="date" class="form-control" name="date">
                                         <div *ngIf="myForm.get('birthday').errors && myForm.get('birthday').dirty || myForm.get('birthday').touched">
-                                            <p *ngIf="myForm.get('birthday').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('birthday').hasError('required')">
                                                 La fecha de nacimiento es obligatorio
                                             </p>
                                         </div>
@@ -35,7 +35,7 @@
                                         <label for="email" class="form-label">Correo Electronico</label>
                                         <input formControlName="email" type="email" class="form-control" name="email">
                                         <div *ngIf="myForm.get('email').errors && myForm.get('email').dirty || myForm.get('email').touched">
-                                            <p *ngIf="myForm.get('email').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('email').hasError('required')">
                                                 El correo electronico es obligatorio
                                             </p>
                                         </div>
@@ -43,7 +43,7 @@
                                         <label for="password" class="form-label">Contraseña</label>
                                         <input formControlName="password" type="password" class="form-control" name="password"> <br>
                                         <div *ngIf="myForm.get('password').errors && myForm.get('password').dirty || myForm.get('password').touched">
-                                            <p *ngIf="myForm.get('password').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('password').hasError('required')">
                                                 La contraseña es obligatorio
                                             </p>
                                         </div>
@@ -57,7 +57,7 @@
 
                                         </div>
                                         <br>
-                                          <button type="submit" class="btn btn-outline-primary" [disabled]="myForm.invalid">SIGUIENTE</button>
+                                          <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">SIGUIENTE</button>
                                       </div>
 
                                       
@@ -66,7 +66,7 @@
                                         <label for="text" class="form-label">Apellido Paterno</label>
                                         <input formControlName="lastName" type="text" class="form-control" name="text">
                                         <div *ngIf="myForm.get('lastName').errors && myForm.get('lastName').dirty || myForm.get('lastName').touched">
-                                            <p *ngIf="myForm.get('lastName').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('lastName').hasError('required')">
                                                 El apellido paterno es obligatorio
                                             </p>
                                         </div>
@@ -74,7 +74,7 @@
                                         <label for="text" class="form-label">Nacionalidad</label>
                                         <input formControlName="nationality" type="text" class="form-control" name="text">
                                         <div *ngIf="myForm.get('nationality').errors && myForm.get('nationality').dirty || myForm.get('nationality').touched">
-                                            <p *ngIf="myForm.get('nationality').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('nationality').hasError('required')">
                                                 La nacionalidad es obligatorio
                                             </p>
                                         </div>
@@ -82,7 +82,7 @@
                                         <label for="number" class="form-label">Movil</label>
                                         <input formControlName="phone" type="number" class="form-control" name="number">
                                         <div *ngIf="myForm.get('phone').errors && myForm.get('phone').dirty || myForm.get('phone').touched">
-                                            <p *ngIf="myForm.get('phone').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('phone').hasError('required')">
                                                 El movil es obligatorio
                                             </p>
                                         </div>
@@ -90,7 +90,7 @@
                                         <label for="password" class="form-label">Verificar contraseña</label>
                                         <input formControlName="passwordCheck" type="password" class="form-control" name="password"> <br>
                                         <div *ngIf="myForm.get('passwordCheck').errors && myForm.get('passwordCheck').dirty || myForm.get('passwordCheck').touched">
-                                            <p *ngIf="myForm.get('passwordCheck').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('passwordCheck').hasError('required')">
                                                 La verificacion de contraseña es obligatorio
                                             </p>
                                         </div>
@@ -112,7 +112,7 @@
                                         <label for="text" class="form-label">Apellido Materno</label>
                                         <input formControlName="lastNameOne" type="text" class="form-control" name="text">
                                         <div *ngIf="myForm.get('lastNameOne').errors && myForm.get('lastNameOne').dirty || myForm.get('lastNameOne').touched">
-                                            <p *ngIf="myForm.get('lastNameOne').hasError('required')">
+                                            <p class="text-danger" *ngIf="myForm.get('lastNameOne').hasError('required')">
                                                 El apellido materno es obligatorio
                                             </p>
                                         </div>
