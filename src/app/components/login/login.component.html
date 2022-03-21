@@ -51,8 +51,8 @@
                     </div>
 
                     <div class="my-3">
-                        <span>No tienes cuenta?<a href="" routerLink="/register">Registrate</a></span> <br>
-                        <span><a href="#">Recuperar password</a></span>
+                        <span>No tienes cuenta?<a  (click)="register()" class="btn btn-link">Registrate</a></span> <br>
+                        <span><a (click)="forgottenPassword()" class="btn btn-link">Recuperar password</a></span>
                     </div>
                 </form>
                 <!-- LOGIN CON REDES SOCIALES-->
@@ -101,7 +101,7 @@
     </div>
 
 
-    <button class="btn-primary" (click)="signOut()">Cerrar sesión</button>
+    <button class="btn-primary">Cerrar sesión</button>
 </body>
 
 </html>

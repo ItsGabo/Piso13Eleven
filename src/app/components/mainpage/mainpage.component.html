@@ -7,7 +7,8 @@
     <title>Main Page</title>
 </head>
 <body>
-    <img src="assets/img/piso13.png" width="125" alt="">
+   <!-- <img src="assets/img/piso13.png" width="125" alt=""> -->
+   <app-navbar></app-navbar>
     
     
     <div class="container w-75 bg mt-5 rounded shadow"> 
@@ -20,12 +21,18 @@
                             <div class="col-20">
                                 
                                 <div class="container">
+                                    <div class="text-center">
+                                        <h5>Hola! Bienvenido a tu perfil</h5>
+                                                    <p>Status: Pago pendiente</p>
+                                                    <p>Haz elegido el plan de arrendamiento web XXXX</p>
+                                                    <p>Tu plan es de $2500 mensuales</p>
+                                    </div>
                                     <div class="row">
                                         <h6>Estas a unos paso de estrenar tu pagina web</h6> 
                                       <div class="col"> <br>
                                         <p>Suscribete al plan de arrendamiento web</p>
                                         <button type="button" class="btn btn-outline-primary">Empieza a pagar tu arrendamiento</button> <br> <br> <br> <br> <br>
-                                        <button type="button" class="btn btn-outline-primary" routerLink="/productbilling">Sube la informacion de tu sitio</button>
+                                        <button type="button" class="btn btn-outline-primary" (click)="productbilling()">Sube la informacion de tu sitio</button>
                                         <h6>En cuando subas toda la informacion</h6>
                                         <h6>tu sitio estara funcionando en maximo 5 dias habiles.</h6> <br> <br>
                                         <h4>TU PAGINA WEB ESTÁ LISTA</h4>
@@ -39,5 +46,8 @@
             </div>
         </div>
     </div>    
+
+
+    <app-footer></app-footer>
 </body>
 </html>

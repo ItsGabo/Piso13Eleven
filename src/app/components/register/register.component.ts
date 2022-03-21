@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+    captcha: string;
+    email: string;
+
+  constructor(private router: Router) {
+    this.captcha= '';
+    this.email= 'Secrect@email.com';
+   }
 
   ngOnInit(): void {
   }
+  
+  resolved(captchaResponse: string){
+    this.captcha = captchaResponse;
+    console.log('resolved captcha with response: ' + this.captcha)
+  }
 
+  mainpage() {
+    console.log('hi')
+    this.router.navigate(['mainpage']);
+  }
 }

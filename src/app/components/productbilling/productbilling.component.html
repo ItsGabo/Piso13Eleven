@@ -1,16 +1,16 @@
 <img src="assets/img/piso13.png" width="125" alt="">
 <div class="container"> 
-    <br>
-    <h3>Plan de arrendamiento</h3> 
-    <br>
-    <h4>Suscribete al plan de arrendamiento web y empieza a disfrutar de los beneficios</h4>
+  <br>
+  <h3>Plan de arrendamiento</h3> 
+  <br>
+  <h4>Suscribete al plan de arrendamiento web y empieza a disfrutar de los beneficios</h4>
 </div>
 
 <div class="container"> 
-    <br>
-    <h3>Datos de facturación</h3> 
-    <br>
-    <h4>Tus facturas llegaran mes con mes al correo que pongas a continuacion al dia siguiente de recibir tu pago o podras descargarlas de tu historial de pago</h4>
+  <br>
+  <h3>Datos de facturación</h3> 
+  <br>
+  <h4>Tus facturas llegaran mes con mes al correo que pongas a continuacion al dia siguiente de recibir tu pago o podras descargarlas de tu historial de pago</h4>
 </div>
 <form action="">
     <div class="container w-75 bg mt-5 rounded shadow"> 
@@ -24,6 +24,7 @@
                                 <div class="container">
                                     <div class="row">
                                       <div class="col">
+                                        
                                         <label for="text" class="form-label">RFC</label>
                                         <input type="text" class="form-control" name="text">
 
@@ -41,13 +42,28 @@
                                         <input type="text" class="form-control" name="text">
                                           </div>
                                       
-                                      
+                                         
+
 
                                       <div class="col">
                                         <label for="text" class="form-label">Correo Electronico</label>
                                         <input type="text" class="form-control" name="text">
-                                        <img src="assets/img/pay.PNG" routerLink="/domain" width="125" alt="">
+                                        <img src="assets/img/pay.PNG" (click)="domain()"  width="125" alt="">
+
+                                        <button *ngIf="!showPaypalButtons" 
+                                          (click)="pay()">Pagar con paypal
+                                        </button>
+                                        
+                                        <ngx-paypal *ngIf="showPaypalButtons" 
+                                          [config]="payPalConfig">
+                                        </ngx-paypal>
+                                        
+                                        <button *ngIf="showPaypalButtons" 
+                                          (click)="back()">Volver atrás
+                                        </button>
+
                                       </div>
+                                      
                                     </div>
                                 </div>
                             </div>

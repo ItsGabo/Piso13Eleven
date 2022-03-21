@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-almostfinish',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlmostfinishComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  
+  importantinformation() {
+    console.log('hi')
+    this.router.navigate(['importantinformation']);
   }
 
 }

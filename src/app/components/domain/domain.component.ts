@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-domain',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DomainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  siteidentity() {
+    console.log('hi')
+    this.router.navigate(['siteidentity']);
+  }
 }
