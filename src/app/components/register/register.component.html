@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <title>Register</title>
-</head>
-<body>
-    <img src="assets/img/piso13.png" width="125" alt="">
-    <div class="container"> 
-        <br>
-        <h1>Registrate</h1> 
-        <br>
-        <h4>Estas a un paso de estrenar tu pagina web con el plan de arrendamiento web</h4>
-    </div>
-    <form action="">
+<img src="assets/img/piso13.png" width="125" alt="">
+<div class="container"> 
+    <br>
+    <h1>Registrate</h1> 
+    <br>
+    <h4>Estas a un paso de estrenar tu pagina web con el plan de arrendamiento web</h4>
+</div>
+<form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate>
     <div class="container w-75 bg mt-5 rounded shadow"> 
         <div class="row align-items-stretch">
-            <div class=""></div>
             <div class="p-5 rounded-end">
                 <div class="row"> 
                     <div class="container-fluid">
@@ -28,16 +17,21 @@
                                     <div class="row">
                                       <div class="col">
                                         <label for="text" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" name="text">
+                                        <input formControlName="name" type="text" class="form-control" name="text">
+                                        <div *ngIf="myForm.get('name').errors && myForm.get('name').dirty || myForm.get('name').touched">
+                                            <p *ngIf="myForm.get('name').hasError('required')">
+                                                El nombre es obligatorio
+                                            </p>
+                                        </div>
 
                                         <label for="date" class="form-label">Fecha de Nacimiento</label>
-                                        <input type="date" class="form-control" name="date">
+                                        <input formControlName="birthday" type="date" class="form-control" name="date">
 
                                         <label for="email" class="form-label">Correo Electronico</label>
-                                        <input type="email" class="form-control" name="email">
+                                        <input formControlName="email" type="email" class="form-control" name="email">
 
                                         <label for="password" class="form-label">Contraseña</label>
-                                        <input type="password" class="form-control" name="password"> <br>
+                                        <input formControlName="password" type="password" class="form-control" name="password"> <br>
                                         
                                         <div [hidden]="captcha">
                                             
@@ -48,24 +42,23 @@
 
                                         </div>
                                         <br>
-
-                                          <button type="button" class="btn btn-outline-primary" (click)="mainpage()">SIGUIENTE</button>
+                                          <button type="submit" class="btn btn-outline-primary" [disabled]="myForm.invalid">SIGUIENTE</button>
                                       </div>
 
                                       
 
                                       <div class="col">
                                         <label for="text" class="form-label">Apellido Paterno</label>
-                                        <input type="text" class="form-control" name="text">
+                                        <input formControlName="lastName" type="text" class="form-control" name="text">
 
                                         <label for="text" class="form-label">Nacionalidad</label>
-                                        <input type="text" class="form-control" name="text">
+                                        <input formControlName="nationality" type="text" class="form-control" name="text">
 
                                         <label for="number" class="form-label">Movil</label>
-                                        <input type="number" class="form-control" name="number">
+                                        <input formControlName="phone" type="number" class="form-control" name="number">
 
                                         <label for="password" class="form-label">Verificar contraseña</label>
-                                        <input type="password" class="form-control" name="password"> <br>
+                                        <input formControlName="passwordCheck" type="password" class="form-control" name="password"> <br>
                                         <div class="card" style="width: 18rem;">
                                             <div class="card-header">
                                               La contraseña debe tener:
@@ -82,7 +75,7 @@
 
                                       <div class="col">
                                         <label for="text" class="form-label">Apellido Materno</label>
-                                        <input type="text" class="form-control" name="text">
+                                        <input formControlName="lastNameOne" type="text" class="form-control" name="text">
                                       </div>
                                     </div>
                                 </div>
@@ -94,5 +87,3 @@
         </div>
     </div>
 </form>
-</body>
-</html>
