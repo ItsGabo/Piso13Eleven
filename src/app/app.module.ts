@@ -35,6 +35,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SocialLoginModule,
     NgxPayPalModule,
     RecaptchaModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LightboxModule
   ],
   providers: [
     {

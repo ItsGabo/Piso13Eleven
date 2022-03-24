@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { Lightbox } from 'ngx-lightbox';
 
 @Component({
   selector: 'app-demo',
@@ -8,7 +9,24 @@ import {Router} from '@angular/router';
 })
 export class DemoComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public _albums = [];
+
+  constructor(
+    private router: Router,
+    private _lightbox: Lightbox
+  ) {
+    for (let i = 1; i <= 4; i++) {
+      const src = 'assets/demo/img/image' + i + '.jpg'; 
+      const caption = 'Image ' + i + ' caption here'; 
+      const thumb = 'assets/demo/img/image' + i + '-thumb.jpg'; 
+      const album = { 
+        src: src, 
+        caption: caption, 
+        thumb: thumb 
+      }; 
+      this._albums.push(album);
+    }
+  }
 
   ngOnInit(): void {
   }
@@ -17,5 +35,13 @@ export class DemoComponent implements OnInit {
     console.log('hi')
     this.router.navigate(['correctinformation']);
   }
+
+  open(index: number): void { // open lightbox 
+    this._lightbox.open(this._albums, index);
+  } 
+  
+  close(): void { // close lightbox programmatically 
+    this._lightbox.close(); 
+  } 
 
 }
